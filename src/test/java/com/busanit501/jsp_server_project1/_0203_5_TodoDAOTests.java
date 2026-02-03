@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class _0203_5_TodoDAOTests {
 
@@ -48,6 +49,18 @@ public class _0203_5_TodoDAOTests {
         // 실제 기능 구현 테스트
         todoDAO.insert(vo);
     } //
+
+    // 목록 전체 조회
+    @Test
+    public void testList() throws Exception {
+        List<_0203_1_TodoVO> list = todoDAO.selectAll();
+        // 콘솔에, 반복문으로 출력 해보기.
+        // @ToString
+        // System.out.println(vo)
+        // 해당 객체를 sout 으로 출력하면, 우리가 지정한 데이터 값으로 출력이 됩니다.
+        list.forEach(vo -> System.out.println(vo));
+
+    }
 
 
 }
