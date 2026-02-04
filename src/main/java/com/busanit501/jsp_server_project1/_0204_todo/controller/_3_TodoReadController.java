@@ -1,4 +1,4 @@
-package com.busanit501.jsp_server_project1._0204_todo;
+package com.busanit501.jsp_server_project1._0204_todo.controller;
 
 import com.busanit501.jsp_server_project1._0204_todo.dto._0204_1_TodoDTO;
 import com.busanit501.jsp_server_project1._0204_todo.service._0204_4_TodoService;
