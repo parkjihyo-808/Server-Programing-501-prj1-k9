@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class _0203_4_TodoDAO {
+public class _0204_5_TodoDAO {
     // 여기 클래스, 데이터베이스에 연결하는 기능을 모아둔 클래스.
 
     // 디비 서버에 연결해서,

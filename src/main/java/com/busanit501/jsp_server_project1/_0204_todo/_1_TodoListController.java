@@ -1,7 +1,7 @@
 package com.busanit501.jsp_server_project1._0204_todo;
 
 import com.busanit501.jsp_server_project1._0204_todo.dto._0204_1_TodoDTO;
-import com.busanit501.jsp_server_project1._0204_todo.service._4_TodoService;
+import com.busanit501.jsp_server_project1._0204_todo.service._0204_4_TodoService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,7 +27,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp)
         // 0202_모델클래스_서비스_컨트롤러를_이용한_로직 처리_순서1
         // _4_TodoService , 기능에서, 데이터를 조회하는 기능
         // 지금은 더미 데이터, 나중에, 데이터베이스를 붙이기.
-        List<_0204_1_TodoDTO> dtoList = _4_TodoService.INSTANCE.getList();
+        List<_0204_1_TodoDTO> dtoList = _0204_4_TodoService.INSTANCE.getList();
         // 서버 -> 클라이언트 , 응답, 방금 메서드 호출해서, 받아온, 임시 더미 데이터 10개를 전달.
         req.setAttribute("list", dtoList);
 

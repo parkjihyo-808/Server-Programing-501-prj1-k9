@@ -1,7 +1,7 @@
 package com.busanit501.jsp_server_project1._0204_todo;
 
 import com.busanit501.jsp_server_project1._0204_todo.dto._0204_1_TodoDTO;
-import com.busanit501.jsp_server_project1._0204_todo.service._4_TodoService;
+import com.busanit501.jsp_server_project1._0204_todo.service._0204_4_TodoService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,7 +25,7 @@ public class _3_TodoReadController extends HttpServlet {
         Long tno = Long.parseLong(req.getParameter("tno"));
 
         // 서비스에서 만들었던, get 메서드에, tno 번호를 전달해서, 임시 데이터를 가져오기.
-        _0204_1_TodoDTO dto  = _4_TodoService.INSTANCE.get(tno);
+        _0204_1_TodoDTO dto  = _0204_4_TodoService.INSTANCE.get(tno);
 
         // 데이터를 전달 준비1
         req.setAttribute("dto", dto);

@@ -1,22 +1,46 @@
 package com.busanit501.jsp_server_project1._0204_todo.service;
 
+import com.busanit501.jsp_server_project1._0204_todo.dao._0204_5_TodoDAO;
+import com.busanit501.jsp_server_project1._0204_todo.domain._0204_2_TodoVO;
 import com.busanit501.jsp_server_project1._0204_todo.dto._0204_1_TodoDTO;
+import com.busanit501.jsp_server_project1._0204_todo.util._0204_3_MapperUtil;
+import org.modelmapper.ModelMapper;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public enum _4_TodoService {
+public enum _0204_4_TodoService {
     INSTANCE; // static final 생략이 되어있다.
 
+    // 0204, 1 기능 추가. 클래스 가져오기
+    // 1) DB 서버에 작업을 시키는 클래스
+    private _0204_5_TodoDAO dao;
+    // 2) dto<->vo 클래스를 변환 해주는 기능 클래스
+    private ModelMapper modelMapper;
+
+    // 0204, 2 생성자 호출
+    _0204_4_TodoService() {
+        // 위에 전역으로 선언만 한 객체를 여기서 초기화해서, 사용할수 있게 하기.
+        dao = new _0204_5_TodoDAO();
+        modelMapper = _0204_3_MapperUtil.INSTANCE.get();
+    }
+
+
+    // 0204, 3 , 기능 변경해서 사용하기.
     // 기능구현,
     // 글쓰기
-    public void register(_0204_1_TodoDTO todoDTO) {
-        System.out.println("서비스 기능, 글쓰기 기능, " +
-                "사용자가 일정을 입력하면, todoDTO 라는 객체에 담겨서, 전달을 받습니다." +
-                "꺼내서 사용하면됩니다. 뼈대만 구성.");
-        System.out.println("todoDTO : " + todoDTO);
+    public void register(_0204_1_TodoDTO todoDTO) throws Exception {
+       // todoDTO -> todoVo 변환
+        _0204_2_TodoVO todoVO = modelMapper.map(todoDTO, _0204_2_TodoVO.class);
+
+        // 변환 확인.
+        System.out.println("_0204_4_TodoService에서 register 작업중, 변환 결과 확인 todoVO : " + todoVO);
+
+        // DB 에 작업 시키는 클래스를 이용해서, DB 서버에 쓰기 작업하기.
+        // 기본 메서드에, 예외처리를 가능하게 변경.
+        dao.insert(todoVO);
     }
     // 목록조회
     public List<_0204_1_TodoDTO> getList() {
