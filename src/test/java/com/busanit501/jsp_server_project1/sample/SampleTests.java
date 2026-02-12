@@ -9,6 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 @Log4j2 // 로그를 기록 하는데, 어떤 기준으로 하나요? 로그레벨
 // info, debug , warning
 @ExtendWith(SpringExtension.class) // Junit5 단위 테스트 기능 통합 설정
@@ -20,10 +24,23 @@ public class SampleTests {
     // (root-context.xml , 객체 등록 했음, 서버 시작시, 활성화(객체로 치면 생성자 호출)
     private _2_SampleService_0212 sampleService0212;
 
+    //데이터베이스 연결 객체를 서버 시작시, 활성화가 되니, 우리는 연결만핮.
+    @Autowired
+    private DataSource dataSource; // 느슨한 결합.
+
     @Test
     public void testService1() {
         log.info("실제 객체가 활성화가 되었는지 여부를 객체를 조회해보기," + sampleService0212);
         Assertions.assertNotNull(sampleService0212);
     }
+
+    @Test
+    public void testConnection() throws SQLException {
+        Connection connection = dataSource.getConnection();
+        log.info("testConnection : " + connection);
+        Assertions.assertNotNull(connection);
+        connection.close();
+    }
+
 
 }
