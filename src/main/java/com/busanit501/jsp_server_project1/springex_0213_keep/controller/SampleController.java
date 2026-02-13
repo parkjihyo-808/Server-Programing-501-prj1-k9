@@ -3,6 +3,7 @@ package com.busanit501.jsp_server_project1.springex_0213_keep.controller;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @Log4j2
@@ -19,6 +20,16 @@ public class SampleController {
     @GetMapping("/ex1")
     public void ex1(String name, int age) {
         log.info("ex1 ~~~");
+        log.info("데이터 수집 : name : " + name);
+        log.info("데이터 수집 : age : " + age);
+    }
+
+    // http://localhost:8080/ex2?name=이상용&age=20
+    // http://localhost:8080/ex2
+    @GetMapping("/ex2")
+    public void ex2(@RequestParam(name = "name", defaultValue = "이름을 입력해주세요") String name,
+                    @RequestParam(name = "age", defaultValue = "나이를 입력해주세요") int age) {
+        log.info("ex2 ~~~");
         log.info("데이터 수집 : name : " + name);
         log.info("데이터 수집 : age : " + age);
     }
