@@ -12,4 +12,14 @@ public class SampleController {
     public void hello() {
         log.info("hello spring mvc ~~~");
     }
+
+    // 화면에서 get 데이터를 서버에게 전달하는 방법,
+    // 쿼리 스트링 이용하기.
+    // http://localhost:8080/ex1?name=이상용&age=20
+    @GetMapping("/ex1")
+    public void ex1(String name, int age) {
+        log.info("ex1 ~~~");
+        log.info("데이터 수집 : name : " + name);
+        log.info("데이터 수집 : age : " + age);
+    }
 }
