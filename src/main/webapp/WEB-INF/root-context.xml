@@ -59,7 +59,7 @@
     <!--    시스템에서, 해당 패키지의 애너테이션 존재 유무를 몰라요, -->
     <!--    그래서, 시스템에 등록해서 이용해야함. -->
     <!--    결론, 우리는 이방식으로 안하고, 파일 분리 형식으로 작업 할 예정. -->
-    <mybatis:scan base-package="com.busanit501.jsp_server_project1.springex_0213_keep.mapper"></mybatis:scan>
+    <mybatis:scan base-package="com.busanit501.jsp_server_project1.springex_new_0219_keep.mapper"></mybatis:scan>
 
     <context:component-scan base-package="com.busanit501.jsp_server_project1.springex_new_0219_keep.config"/>
 
