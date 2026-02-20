@@ -62,5 +62,6 @@
     <mybatis:scan base-package="com.busanit501.jsp_server_project1.springex_new_0219_keep.mapper"></mybatis:scan>
 
     <context:component-scan base-package="com.busanit501.jsp_server_project1.springex_new_0219_keep.config"/>
+    <context:component-scan base-package="com.busanit501.jsp_server_project1.springex_new_0219_keep.service"/>
 
 </beans>
