@@ -13,14 +13,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-<%--    5.0 버전--%>
+    <%--    5.0 버전--%>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-<%--    5.3버전--%>
-<%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">--%>
+    <%--    5.3버전--%>
+    <%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">--%>
 
     <title>임시 register</title>
+    <style>
+        .custom-check-inline {
+            display: flex; /* 요소들을 가로로 배치 */
+            align-items: center; /* 수직 중앙 정렬 */
+            gap: 10px; /* 라벨과 체크박스 사이의 간격 설정 */
+        }
+    </style>
 </head>
 <body>
 <div class="container-fluid">
@@ -79,16 +86,20 @@
                                 <span class="input-group-text"> Writer:  </span>
                                 <input class="form-control" type="text" name="writer">
                             </div>
-                            <div class="form-check form-check-reverse mb-3">
+                            <div class="form-check mb-3">
                                 <span class="form-check-label">  Finished:  </span>
                                 <input class="form-check-input" type="checkbox" name="finished">
                             </div>
-<%--                            <div class="form-check mb-3">--%>
-<%--                                <input class="form-check-input" type="checkbox" value="" id="checkDefault">--%>
-<%--                                <label class="form-check-label" for="checkDefault">--%>
-<%--                                    Default checkbox--%>
-<%--                                </label>--%>
-<%--                            </div>--%>
+                            <div class="custom-check-inline">
+                                <label for="myCheck2">완료 여부: </label>
+                                <input type="checkbox" id="myCheck2" name="finished">
+                            </div>
+                            <%--                            <div class="form-check mb-3">--%>
+                            <%--                                <input class="form-check-input" type="checkbox" value="" id="checkDefault">--%>
+                            <%--                                <label class="form-check-label" for="checkDefault">--%>
+                            <%--                                    Default checkbox--%>
+                            <%--                                </label>--%>
+                            <%--                            </div>--%>
                             <div>
                                 <button class="btn btn-secondary" type="reset">초기화</button>
                                 <button class="btn btn-primary" type="submit">등록하기</button>
