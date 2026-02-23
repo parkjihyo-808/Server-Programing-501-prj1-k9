@@ -30,10 +30,18 @@ public class TodoController {
     @RequestMapping("/list")
     public void list(Model model) {
 
-        log.info("todo list...");
+        log.info("todo2 list...");
         List<TodoDTO> dtoList = todoService.getAll();
         // 서버 -> 화면에 데이터 목록들을 전달. 박스 이름 : dtoList, 내용물: DB에서 받아온 목록들
         model.addAttribute("dtoList",dtoList);
+    }
+
+    @GetMapping("/read")
+    public void read(Long tno, Model model) {
+        log.info("todo2 read...");
+        TodoDTO todoDTO = todoService.getOne(tno);
+        // 서버 -> 화면에 데이터 목록들을 전달. 박스 이름 : dto, 내용물: DB에서 받아온 목록들
+        model.addAttribute("dto",todoDTO);
     }
 
 //    @RequestMapping(value = "/register", method = RequestMethod.GET)
@@ -48,7 +56,7 @@ public class TodoController {
     // 유효성 체크시, 주의사항, !) @Valid TodoDTO todoDTO, BindingResult bindingResult, 순서 주의!!!
     public String postRegister(@Valid TodoDTO todoDTO, BindingResult bindingResult,
                                RedirectAttributes redirectAttributes) {
-        log.info("todo register..post");
+        log.info("todo2 register..post");
 
 
         // 유효성 체크
