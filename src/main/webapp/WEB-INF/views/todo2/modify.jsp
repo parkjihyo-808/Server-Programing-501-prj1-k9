@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>임시하나조회</title>
+    <title>임시 수정폼</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -53,7 +53,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        하나 조회
+                        수정 화면
                     </div>
                     <div class="card-body">
                             <%--                            부트스트랩 이용중이고, 폼 컨트롤 하나씩 적용해보기.--%>
