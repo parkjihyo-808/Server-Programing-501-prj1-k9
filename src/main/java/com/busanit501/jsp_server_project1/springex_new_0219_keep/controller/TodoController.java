@@ -49,6 +49,16 @@ public class TodoController {
         model.addAttribute("dto",todoDTO);
     }
 
+    @PostMapping("/delete")
+    public String delete(Long tno, RedirectAttributes redirectAttributes) {
+        log.info("삭제 포스트 처리 작업 ");
+        log.info("삭제할 tno 번호 확인 : " + tno);
+
+        // 실제 삭제 기능은 아직 미구현,
+
+        return "redirect:/todo2/list";
+    }
+
 //    @RequestMapping(value = "/register", method = RequestMethod.GET)
     @GetMapping("/register")
     // 뷰 리졸버가 연결되어서,
