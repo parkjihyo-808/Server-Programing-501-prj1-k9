@@ -57,11 +57,11 @@ public class TodoController {
     public String postRegister(@Valid TodoDTO todoDTO, BindingResult bindingResult,
                                RedirectAttributes redirectAttributes) {
         log.info("todo2 register..post");
-        log.info("todoDTO : " + todoDTO);
-        boolean finishedBoolean = todoDTO.isFinished();
-        if (finishedBoolean){
-        todoDTO.setFinished(finishedBoolean);
-        }
+//        log.info("todoDTO : " + todoDTO);
+//        boolean finishedBoolean = todoDTO.isFinished();
+//        if (finishedBoolean){
+//        todoDTO.setFinished(finishedBoolean);
+//        }
         // 유효성 체크
         if(bindingResult.hasErrors()) {
             log.info("유효성 오류가 있습니다. ");
@@ -70,6 +70,7 @@ public class TodoController {
             return "redirect:/todo2/register";
         }
 
+        log.info("todoDTO2 : " + todoDTO);
         // 서비스의 도움을 받아서, 화면으로 부터 전달 받은 데이터를 전달하기.
         todoService.register(todoDTO);
 

@@ -12,7 +12,7 @@
 <!--    insert 추가 작업 -->
 <!--    TodoMapper 인터페이스 안에 있는 메서드이름과 동일-->
     <insert id="insert">
-        insert into tbl_todo (title, dueDate, writer) values ( #{title}, #{dueDate}, #{writer})
+        insert into tbl_todo (title, dueDate, writer, finished) values ( #{title}, #{dueDate}, #{writer}, #{finished})
     </insert>
 
     <select id="selectAll" resultType="com.busanit501.jsp_server_project1.springex_new_0219_keep.domain.TodoVO">
