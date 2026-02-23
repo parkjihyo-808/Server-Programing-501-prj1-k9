@@ -84,17 +84,18 @@
         </div>
     </div>
     <div class="row content">
-<%--        <h1>임시리스트</h1>--%>
+        <%--        <h1>임시리스트</h1>--%>
     </div>
     <div class="row footer">
-        <div class="row fixed-bottom" style="z-index: -100">
-            <footer class="py-1 my-1">
-                <p class="text-center text-muted">
-                    Footer
-                </p>
-            </footer>
-        </div>
+        <%--        <div class="row fixed-bottom" style="z-index: -100">--%>
+        <%--    <div class="row fixed-bottom">--%>
+        <footer class="py-3 mt-auto">
+            <p class="text-center text-muted mb-0">
+                Footer
+            </p>
+        </footer>
     </div>
+    <%--    </div>--%>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
