@@ -53,19 +53,38 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        Featured
+                        전체목록
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Tno</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Writer</th>
+                                <th scope="col">DueDate</th>
+                                <th scope="col">Finished</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <c:forEach items="${dtoList}" var="dto">
+                                <tr>
+                                    <th><c:out value="${dto.tno}"/></th>
+                                    <td><c:out value="${dto.title}"/></td>
+                                    <td><c:out value="${dto.writer}"/></td>
+                                    <td><c:out value="${dto.dueDate}"/></td>
+                                    <td><c:out value="${dto.finished}"/></td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="row content">
-        <h1>임시리스트</h1>
+<%--        <h1>임시리스트</h1>--%>
     </div>
     <div class="row footer">
         <div class="row fixed-bottom" style="z-index: -100">
