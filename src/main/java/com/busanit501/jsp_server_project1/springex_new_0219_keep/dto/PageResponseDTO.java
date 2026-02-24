@@ -1,6 +1,8 @@
 package com.busanit501.jsp_server_project1.springex_new_0219_keep.dto;
 
 import lombok.Builder;
+import lombok.Getter;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -9,6 +11,8 @@ import java.util.List;
 // -> 다용도 사용하기.
 // 현재)Todo 만 이용하지만, 추후에 다른 도메인도 활용할 예정.
 //  회원 붙이면,
+@Getter
+@ToString
 public class PageResponseDTO<E> {
 
     private int page;

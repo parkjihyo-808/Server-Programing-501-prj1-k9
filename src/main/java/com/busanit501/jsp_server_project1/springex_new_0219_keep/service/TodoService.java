@@ -1,5 +1,7 @@
 package com.busanit501.jsp_server_project1.springex_new_0219_keep.service;
 
+import com.busanit501.jsp_server_project1.springex_new_0219_keep.dto.PageRequestDTO;
+import com.busanit501.jsp_server_project1.springex_new_0219_keep.dto.PageResponseDTO;
 import com.busanit501.jsp_server_project1.springex_new_0219_keep.dto.TodoDTO;
 
 import java.util.List;
@@ -20,4 +22,7 @@ public interface TodoService {
 
     //수정
     void modify(TodoDTO todoDTO);
+
+    //페이징 처리가 된 목록 조회, 부가적으로 페이징 준비물 재료들도 같이 전달.
+    PageResponseDTO<TodoDTO> getList(PageRequestDTO pageRequestDTO);
 }

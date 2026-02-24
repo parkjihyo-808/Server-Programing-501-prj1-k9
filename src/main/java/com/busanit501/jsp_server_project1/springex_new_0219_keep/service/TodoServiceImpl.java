@@ -1,6 +1,8 @@
 package com.busanit501.jsp_server_project1.springex_new_0219_keep.service;
 
 import com.busanit501.jsp_server_project1.springex_new_0219_keep.domain.TodoVO;
+import com.busanit501.jsp_server_project1.springex_new_0219_keep.dto.PageRequestDTO;
+import com.busanit501.jsp_server_project1.springex_new_0219_keep.dto.PageResponseDTO;
 import com.busanit501.jsp_server_project1.springex_new_0219_keep.dto.TodoDTO;
 import com.busanit501.jsp_server_project1.springex_new_0219_keep.mapper.TodoMapper;
 import lombok.RequiredArgsConstructor;
@@ -67,5 +69,26 @@ public class TodoServiceImpl implements TodoService{
         // 여기서, 변환하기.
        TodoVO todoVO = modelMapper.map(todoDTO, TodoVO.class);
        todoMapper.update(todoVO);
+    }
+
+    @Override
+    public PageResponseDTO<TodoDTO> getList(PageRequestDTO pageRequestDTO) {
+        // 반환 해야할 내용물이 : PageResponseDTO 를 만들기 위한 준비물
+        // 1) PageRequestDTO pageRequestDTO, : 이미 화면으로부터 전달받았다.
+        // 2)List<E> dtoList,
+        List<TodoVO> voList = todoMapper.selectList(pageRequestDTO);
+        List<TodoDTO> dtoList = voList.stream()
+                .map(vo -> modelMapper.map(vo, TodoDTO.class))
+                .collect(Collectors.toList());
+        // 3) int total
+        int total = todoMapper.getCount(pageRequestDTO);
+
+        // 결론, 반환 타입 : PageResponseDTO -> 객체를 생성할 때, 무엇을 호출 ? 생성자 호출.
+        PageResponseDTO<TodoDTO> pageResponseDTO = PageResponseDTO.<TodoDTO>withAll()
+                .dtoList(dtoList)
+                .total(total)
+                .pageRequestDTO(pageRequestDTO)
+                .build();
+        return pageResponseDTO;
     }
 }
