@@ -59,4 +59,17 @@ public class TodoMapperTests {
        todoMapper.delete(38L);
     }
 
+    @Test
+    public void testUpdate() {
+        // 준비물, 화면에서 넘겨받은 TodoVO 있다고 가정, 또는 더미 데이터 준비.
+        // 수정, 기존에 DB 내용으로 선택? (각자다름)
+        TodoVO todoVO = TodoVO.builder()
+                .tno(34L)
+                .title("오늘 점심 뭐 먹죠?0224")
+                .dueDate(LocalDate.now())
+                .finished(true)
+                .build();
+        todoMapper.update(todoVO);
+    }
+
 }

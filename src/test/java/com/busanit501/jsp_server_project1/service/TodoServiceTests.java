@@ -55,5 +55,4 @@ public class TodoServiceTests {
         // 각자 데이터베이스에 있는 tno 번호 확인 후 , 테스트 진행하기.
         todoService.remove(37L);
     }
-
 }
