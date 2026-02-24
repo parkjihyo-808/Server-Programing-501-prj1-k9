@@ -5,9 +5,9 @@ import org.springframework.format.Formatter;
 import java.text.ParseException;
 import java.util.Locale;
 
-public class CheckboxFormatter implements Formatter {
+public class CheckboxFormatter implements Formatter<Boolean> {
     @Override
-    public Object parse(String text, Locale locale) throws ParseException {
+    public Boolean parse(String text, Locale locale) throws ParseException {
         if(text == null) {
             return false;
         }
@@ -16,7 +16,7 @@ public class CheckboxFormatter implements Formatter {
     }
 
     @Override
-    public String print(Object object, Locale locale) {
+    public String print(Boolean object, Locale locale) {
         return object.toString();
     }
 }
