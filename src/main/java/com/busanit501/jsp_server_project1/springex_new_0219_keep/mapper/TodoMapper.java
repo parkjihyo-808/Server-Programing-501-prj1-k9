@@ -26,4 +26,7 @@ public interface TodoMapper {
 
     // 페이지네이션 처리가 된 목록 조회
     List<TodoVO> selectList(PageRequestDTO pageRequestDTO);
+
+    // 전체 갯수 구하기.
+    int getCount(PageRequestDTO pageRequestDTO);
 }

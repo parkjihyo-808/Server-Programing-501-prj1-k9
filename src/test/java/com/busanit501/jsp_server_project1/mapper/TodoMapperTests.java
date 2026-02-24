@@ -86,4 +86,17 @@ public class TodoMapperTests {
         voList.forEach(vo -> log.info(vo));
     }
 
+    // 전체 갯수
+    @Test
+    public void testSelectListCount() {
+        // 화면에서 전달 받은 페이지네이션을 위한 준비물 , 준비.
+        PageRequestDTO pageRequestDTO =  PageRequestDTO.builder()
+                .page(1)
+                .size(10)
+                .build();
+
+        int resultCount = todoMapper.getCount(pageRequestDTO);
+        log.info("전체 갯수 : " + resultCount);
+    }
+
 }
