@@ -28,6 +28,19 @@ public class PageRequestDTO {
     @Positive
     private int size = 10;
 
+    // 보고 있는 페이지의 정보를, URL 주소 뒤에 , ?page=3&size=10, 내용을 첨부하고 싶다.
+    private String link;
+
+    public String getLink() {
+        if(link == null) {
+            StringBuilder builder = new StringBuilder();
+            builder.append("page=" + this.page);
+            builder.append("&size=" + this.size);
+            link = builder.toString();
+        }
+        return link;
+    }
+
     // 3) 몇개를 건너띄기 할건지.
     public int getSkip() {
         return (page -1) * 10;
