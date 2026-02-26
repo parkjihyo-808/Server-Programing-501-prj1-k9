@@ -60,7 +60,7 @@ public class PageRequestDTO {
                 // 한글로 넘어 오는 경우도 있어서, 인코딩을 UTF-8 로 변환.
                 // 뭔가를 변환 작업을 한다면, 의무적으로 예외 처리를 해야함.
                 try {
-                    builder.append("&fkeyword=" + URLEncoder.encode(keyword,"UTF-8"));
+                    builder.append("&keyword=" + URLEncoder.encode(keyword,"UTF-8"));
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
