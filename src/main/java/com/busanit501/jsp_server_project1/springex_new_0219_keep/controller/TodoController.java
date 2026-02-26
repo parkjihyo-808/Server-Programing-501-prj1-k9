@@ -92,7 +92,7 @@ public class TodoController {
         redirectAttributes.addAttribute("page",pageRequestDTO.getPage()); // 현재 보고 있는 페이지로 이동.
         redirectAttributes.addAttribute("size",pageRequestDTO.getSize());
 
-        return "redirect:/todo2/list";
+        return "redirect:/todo2/list?" + pageRequestDTO.getLink() ;
     }
 
 //    @RequestMapping(value = "/register", method = RequestMethod.GET)
