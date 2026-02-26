@@ -159,6 +159,6 @@ public class TodoController {
         // 서버에서 -> 화면으로 데이터를 전달시, 쿼리 스트링으로 전달하는 방법.
         redirectAttributes.addAttribute("page",pageRequestDTO.getPage()); // 현재 보고 있는 페이지로 이동.
         redirectAttributes.addAttribute("size",pageRequestDTO.getSize());
-        return "redirect:/todo2/list";
+        return "redirect:/todo2/read";
     }
 }
